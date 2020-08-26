@@ -1,16 +1,22 @@
-class TodoList{
+class List{
     constructor(){
-        this.todos =[];
+        this.data = [];
     }
 
-    addTodo(){
-        this.todos.push('Novo todo');
-        console.log(this.todos);
+    add(data){
+        this.data.push(data);
+        console.log(this.data)
+    }
+}
+
+class TodoList extends List{
+    constructor(){
+        super(); //Passar Argumentos para a classe pai.
     }
 }
 
 const MinhaLista = new TodoList();
 
 document.getElementById('novotodo').onclick = function(){
-    MinhaLista.addTodo();
+    MinhaLista.add('Novo Todo');
 }
